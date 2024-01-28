@@ -1,0 +1,77 @@
+ROM_ADDRESSES:  0x0000 0x0800 0x1000 0x1800
+ROM_FILES:      invaders.h invaders.g invaders.f invaders.e
+SOUND_FILES:    UFO_F.wav MISSL.wav LAU_H.wav INV_H.wav EXTRA.wav INV_1.wav INV_2.wav INV_3.wav INV_4.wav UFO_H.wav
+DIP_SWITCHES:   1 1 1 1 1 1 1 1
+ARCADE_MODE:    1 1 0 0 0 0 0
+			    
+# ROM: MAME invaders
+#
+# Description
+#
+# ROM_ADDRESSES:  Memory start addresses of the associated rom files.
+#
+# ====================================================================================
+# ROM_FILES:  The rom file names to be loaded and mapped to the memory addresses.
+#
+# ====================================================================================
+# SOUND_FILES:  The provided sound files are mapped as follows:
+# UFO_Flight Player_Shot Player_Hit Invader_Hit Extended_Play Fleet_1 Fleet_2 Fleet_3 Fleet_4 UFO_Hit
+#
+# ====================================================================================
+# DIP_SWITCHES:  SW1 ... SW8
+# 
+# SW1  SW2
+#  1    1    3 Laser bases per game
+#  0    1    4 Laser bases per game
+#  1    0    5 Laser bases per game
+#  0    0    6 Laser bases per game
+# 
+# SW3 RAM & Game Sound check (only with CPU board (A) No. CUN00006)
+# The game version must support the function: TV revision 1 & 2 => MAME ROMs: sitv1 & sitv
+#  1   Checking
+#  0   Normal Play
+#
+# SW4 sets bonus point level for awarding extra laser bases
+#  1    1500 Points
+#  0    1000 Points
+#
+# SW5 Always 1 (Factory setting solid state modules)
+# SW6 Always 1 (Factory setting solid state modules)
+# SW7 Always 1 (Factory setting solid state modules)
+#
+# SW8 for displaying play pricing on screen
+#  1   "1 coin - 1 player     2 coins - 2 players"
+#  0   Nothing is displayed
+#
+# ====================================================================================
+# ARCADE_MODE: Color  Rotate  Flip  Fullscreen  Background  2P_Vertical_Flip  Scaling_Mode
+# 
+# Color:
+# 1 = Emulates the cellophane (Taito: green and magenta) overlayed over the Cathode-Ray Tube (CRT).
+#
+# Rotate:
+# 0 = The game output is directly mapped resulting in a 90° clockwise rotated image because in the
+#     original arcade the monitor has been installed in a vertical orientation.
+# 1 = The game display is rotated by 90° counter-clockwise.
+#
+# Flip:
+# 1 = Flips the display because the original arcade used a semi-transparent mirror to reflect the
+# game in front of a background image of space and a moon.
+# Don't use that option together with the 2P_Vertical_Flip. The SI cocktail table version
+# does not use a semi-transparent mirror.
+#
+# Fullscreen:
+# 1 = Activates the fullscreen mode not showing any window decoration.
+#
+# Background:
+# 1 = Display a background image like in the original Arcade.
+#
+# 2P_Vertical_Flip
+# 1 = The screen flips vertically for a 2 player game on the SI cocktail table version.
+# Don't use that option together with the flip because the table mode has no semi-transparent mirror. 
+#
+# Scaling_Mode:
+# 0 = Nearest
+# 1 = Linear
+# 2 = Best
+#
