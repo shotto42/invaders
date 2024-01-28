@@ -17,20 +17,20 @@ By the end of 1979, an estimated 750,000 Space Invaders machines were installed 
 
 computerarcheology.com [3] provides a great documentation of the SI hardware and software.
 
-| Category        | Technical details (1st release):
-|-----------------|-------------------------------------------------------
-| Release:	  | 1st of April and mass-production in July 1978
-| Vendor:	  | Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado
-| Form factor:	  | Upright arcade cabinet and cocktail table (table-top) cabinet  
-| CPU:            | Intel 8080 / 1.9968 MHz Clock (Released in 1974)  
-| Barrel Shifter: | The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM. Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU. 
-| Sound:          | Texas Instrument SN76477 and analog circuits  
-| Video Monitor:  | Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°  
-| Color:          | Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO  
-| Game box:       | Resolution: 256 x 224 pixels  
-| Display box:    | Non-interlaced 320 Lines x 262 Dots  
-| Frame Rate:     | 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)  
-| Graphic Memory: | 1bit per pixel => 256 x 224 / 8 = 7Kbytes  
+| Category        | Technical details (1st release): |
+|-----------------|-------------------------------------------------------|
+| Release:	  | 1st of April and mass-production in July 1978 |
+| Vendor:	  | Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado |
+| Form factor:	  | Upright arcade cabinet and cocktail table (table-top) cabinet |
+| CPU:            | Intel 8080 / 1.9968 MHz Clock (Released in 1974) |
+| Barrel Shifter: | The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM. Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU. |
+| Sound:          | Texas Instrument SN76477 and analog circuits |
+| Video Monitor:  | Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90° |
+| Color:          | Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO |
+| Game box:       | Resolution: 256 x 224 pixels | 
+| Display box:    | Non-interlaced 320 Lines x 262 Dots |
+| Frame Rate:     | 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz) |
+| Graphic Memory: | 1bit per pixel => 256 x 224 / 8 = 7Kbytes |
 
   
 **Interrupt Handling:**  
@@ -188,13 +188,13 @@ Copy the ROM matching ini file (e.g. invaders.sitv1) into the invaders main fold
 **The following MAME ROM versions have been tested:**
 | MAME      | Description                                                     |
 | ----------|-----------------------------------------------------------------|
-|sitv1      | TV revision 1 (including self test option - DIP SW3)
-|sisv2      | SV revision 2 (black & white)
-|invaders   | Midway version
-|sitv       | TV revision 2 (including self test option - DIP SW3)
-| sisv3     | SV revision 3 (black & white)
-| sisv      | SV revision 4 (black & white)
-| tst_invd  | Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions  
+| sitv1     | TV revision 1 (including self test option - DIP SW3)            |
+| sisv2     | SV revision 2 (black & white)                                   |
+| invaders  | Midway version                                                  |
+| sitv      | TV revision 2 (including self test option - DIP SW3)            |
+| sisv3     | SV revision 3 (black & white)                                   |
+| sisv      | SV revision 4 (black & white)                                   |
+| tst_invd  | Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions |  
   
   
 **Emulator Audio Output:**  
