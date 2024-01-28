@@ -39,10 +39,10 @@ The game software is only allowed to write into the graphics memory when the CRT
 The memory mapping:
 
 ROM Mapping (depends on the ROM sizes which are mainly 2K):
-1.	0000-07FF
-2.	0800-0FFF
-3.	1000-17FF
-4.	1800-1FFF
+1.  0000-07FF
+2.  0800-0FFF
+3.  1000-17FF
+4.  1800-1FFF
 
 RAM Mapping
 2000-23FF 1K RAM
@@ -57,7 +57,7 @@ C000 - DFFF - ROM shadow
 E000 - FFFF - RAM shadow
 
 
-## CPU Input/Output Ports:
+CPU Input/Output Ports:
 The 8080 CPU uses input and output ports to communicate with the outside world.
 DIP switches are used to configure the game, whereas several port inputs handle the buttons to control the gameplay.
 The output ports are mainly used to control the sound generation. A notable exception is the communication towards the external shift register to realize the invader movements.
@@ -132,8 +132,8 @@ bit 7 = n.a.
 Port 6:
 Watchdog signal
 
-## Invaders Emulator Features:
 
+## Invaders Emulator Features:
 - Emulation of the hardware:
     + Intel 8080 CPU, RAM and ROM
 	+ Full screen mode to be used in DIY arcade cabinets
@@ -169,7 +169,7 @@ PlayStation/Xbox style gamepad button mapping:
 < Insert Gamepad Image >
 
 
-The Software Implementation:
+## The Software Implementation:
 The emulation has been written in C and makes use of SDL2 (video and inputs) [9], SDL2_mixer (sound) [10] as well as SDL2_image (background image) [11]
 Because there are already working Intel 8080 CPU emulations like MAME (cpu/i8085/i8085.cpp) [6], the decision has been taken to go for a well working MIT licensed GitHub project intarga/i8080 [4]. The CPU code has been adapted by moving the port input/output handling into the CPU emulation to avoid opcode interpretation outside of the CPU.
 The arcade system simulation has been freshly implemented to cover the above mentioned features.
@@ -193,7 +193,7 @@ sisv         SV revision 4 (black & white)
 tst_invd     Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions
 
 
-## Emulator Audio Output:
+Emulator Audio Output:
 For copyright reasons it is not possible to provide the sound samples.
 Find (Google ...) and add the wav files to the samples folder to activate the audio output.
 Configure the mapping between the SI sound effects and the sample filenames in the invaders.ini file.
@@ -205,7 +205,7 @@ In numbers: 33,536 cycles in 16.8ms
 
 The Invaders Emulator is a single core application and has been tested on the following CPUs:
 
-CPU						                 Execution time per video frame
+CPU                                        Execution time per video frame
 Intel Core i7 6700HQ (old ThinkPad)                 < 1.5ms
 ARM Cortex-A76       (Orange PI 5B)                 < 2ms
 
