@@ -16,8 +16,7 @@ By the end of 1979, an estimated 750,000 Space Invaders machines were installed 
 
 computerarcheology.com [3] provides a great documentation of the SI hardware and software.
 
-Technical details (1st release):
-| Col 1           | Col 2
+| Category        | Technical details (1st release):
 |-----------------|-------------------------------------------------------
 | Release:	  | 1st of April and mass-production in July 1978
 | Vendor:	  | Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado
@@ -37,7 +36,7 @@ Interrupt Handling:
 The game software is only allowed to write into the graphics memory when the CRTs electron beam is not drawing the object to be updated. Two interrupts (vector RST 8 in the middle of the screen and RST 10 at the end) tell the code when to update the already refreshed part of the screen.  
 
 The memory mapping:  
-
+```
 ROM Mapping (depends on the ROM sizes which are mainly 2K):  
 0000 - 07FF  
 0800 - 0FFF  
@@ -55,7 +54,7 @@ Due to partial adressing the rest of the memory address space appears as shadow 
 A000 - BFFF - RAM shadow  
 C000 - DFFF - ROM shadow  
 E000 - FFFF - RAM shadow  
-
+```
 
 CPU Input/Output Ports:  
 The 8080 CPU uses input and output ports to communicate with the outside world.  
@@ -66,7 +65,7 @@ The SW1 ... SW8 inputs are inverted before going into the CPU ports.
 If for example SW3 is set to ON then the signal at bit 0 of port 0 is set to 0.  
   
 Input Ports:
-
+```
 Port 0  
 bit 0 = SW3 (1 = RAM & Sound self-test-request at power up) (inverted)  
 bit 1 = Always 1  
@@ -99,10 +98,10 @@ bit 7 = SW8  1 = Coin info displayed in demo screen (inverted)
   
 Port 3  
 bit 0-7 External shift register data input  
-
+```
   
 Output Ports:  
-  
+```
 Port 2:  
 bit 0,1,2 Provides the shift amount to the external shift register  
 
@@ -131,7 +130,7 @@ bit 7 = n.a.
 
 Port 6:  
 Watchdog signal
-
+```
   
 ## Invaders Emulator Features:  
 Emulation of the hardware:  
@@ -173,45 +172,47 @@ PlayStation/Xbox style gamepad button mapping:
 
 
 ## The Software Implementation:
-The emulation has been written in C and makes use of SDL2 (video and inputs) [9], SDL2_mixer (sound) [10] as well as SDL2_image (background image) [11]
-Because there are already working Intel 8080 CPU emulations like MAME (cpu/i8085/i8085.cpp) [6], the decision has been taken to go for a well working MIT licensed GitHub project intarga/i8080 [4]. The CPU code has been adapted by moving the port input/output handling into the CPU emulation to avoid opcode interpretation outside of the CPU.
+The emulation has been written in C and makes use of SDL2 (video and inputs) [9], SDL2_mixer (sound) [10] as well as SDL2_image (background image) [11]  
+Because there are already working Intel 8080 CPU emulations like MAME (cpu/i8085/i8085.cpp) [6], the decision has been taken to go for a well working MIT licensed GitHub project intarga/i8080 [4]. The CPU code has been adapted by moving the port input/output handling into the CPU emulation to avoid opcode interpretation outside of the CPU.  
 The arcade system simulation has been freshly implemented to cover the above mentioned features.
 
 
-Game ROMs:
-For copyright reasons it is not allowed to distribute the ROM files!
-The Invaders Emulation works with MAME ROMs (Google ...).
-Unzip the ROM files and copy the content into the rom folder.
-
-The folder ini_file_templates contains configuration templates for each of the below listed ROM sets.
+Game ROMs:  
+For copyright reasons it is not allowed to distribute the ROM files!  
+The Invaders Emulation works with MAME ROMs (Google ...).  
+Unzip the ROM files and copy the content into the rom folder.  
+  
+The folder ini_file_templates contains configuration templates for each of the below listed ROM sets.  
 Copy the ROM matching ini file (e.g. invaders.sitv1) into the invaders main folder and rename it to invaders.ini to make sure that the ROMs are correctly loaded and memory mapped. Details of the memory mapping are well documented in the MAME source code: midw8080/8080bw.cpp [7]
 
 The following MAME ROM versions have been tested:
-sitv1        TV revision 1 (including self test option - DIP SW3)
-sisv2        SV revision 2 (black & white)
-invaders     Midway version
-sitv         TV revision 2 (including self test option - DIP SW3)
-sisv3        SV revision 3 (black & white)
-sisv         SV revision 4 (black & white)
-tst_invd     Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions
-
-
-Emulator Audio Output:
-For copyright reasons it is not possible to provide the sound samples.
-Find (Google ...) and add the wav files to the samples folder to activate the audio output.
-Configure the mapping between the SI sound effects and the sample filenames in the invaders.ini file.
-
-
+| MAME      | Description                                                     |
+| ----------|-----------------------------------------------------------------|
+|sitv1      | TV revision 1 (including self test option - DIP SW3)
+|sisv2      | SV revision 2 (black & white)
+|invaders   | Midway version
+|sitv       | TV revision 2 (including self test option - DIP SW3)
+| sisv3     | SV revision 3 (black & white)
+| sisv      | SV revision 4 (black & white)
+| tst_invd  | Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions  
+  
+  
+Emulator Audio Output:  
+For copyright reasons it is not possible to provide the sound samples.  
+Find (Google ...) and add the wav files to the samples folder to activate the audio output.  
+Configure the mapping between the SI sound effects and the sample filenames in the invaders.ini file.  
+  
+  
 ## Emulator performance und supported hardware:
-The emulator must be able to execute CPU clock / video frames per second (1.9968 MHz / 59.541985Hz) opcode cycles within 1 / video frames per second to make sure that the video RAM is fully refreshed in realtime.
-In numbers: 33,536 cycles in 16.8ms
+The emulator must be able to execute CPU clock / video frames per second (1.9968 MHz / 59.541985Hz) opcode cycles within 1 / video frames per second to make sure that the video RAM is fully refreshed in realtime.  
+In numbers: 33,536 cycles in 16.8ms  
 
 The Invaders Emulator is a single core application and has been tested on the following CPUs:
-
+```
 CPU                                        Execution time per video frame
 Intel Core i7 6700HQ (old ThinkPad)                 < 1.5ms
 ARM Cortex-A76       (Orange PI 5B)                 < 2ms
-
+```
 
 ## Configuration file (invaders.ini):
 The ini file allows the full configuration of the application. For example the DIP switch settings of the arcade cabinet or the video graphics output mode.
