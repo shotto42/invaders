@@ -5,13 +5,13 @@ Emulation of the Arcade Game Space Invaders
 The Invaders Emulator runs the arcade machine ROMs on simulated Space Invaders hardware.
 
 
-Motivation and why just another SI emulator?
+## Motivation and why just another SI emulator?
 SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.
 Despite of the already existing SI emulations (e.g. MAME [5]) it is still worth to build an open source application that is easy to configure to build DIY arcade cabinets or just for playing the game which wrote history that must be preserved.
 Furthermore, where is the fun when we don't dig deeper into the inner workings of the SI arcade machine.
 
 
-Space Invaders, a deeper look:
+## Space Invaders, a deeper look:
 Referencing the Wikipedia article [2] SI is commonly considered as one of the most influential video game of all time.
 By the end of 1979, an estimated 750,000 Space Invaders machines were installed worldwide. In the same year, it had become the arcade game industry's all-time best-seller. It remained the top arcade game for three years through 1980. In 1982, SI had grossed $3.8 billion ($13 billion adjusted for inflation as of 2016).
 
@@ -19,19 +19,19 @@ By the end of 1979, an estimated 750,000 Space Invaders machines were installed 
 computerarcheology.com [3] provides a great documentation of the SI hardware and software.
 
 Technical details (1st release):
-Release:			1st of April and mass-production in July 1978
-Vendor:				Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado
-Form factor:		Upright arcade cabinet and cocktail table (table-top) cabinet 
-CPU:				Intel 8080 / 1.9968 MHz Clock (Released in 1974)
-Barrel Shifter:		The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM.
-					Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU.
-Sound:				Texas Instrument SN76477 and analog circuits
-Video:				Monitor: Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°
-					Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO
-					Game box resolution: 256 x 224 pixels
-					Display box: (non-interlaced) 320 Lines x 262 Dots
-					Frame Rate: 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)
-					Graphic Memory: 1bit per pixel => 256 x 224 / 8 = 7Kbytes
+Release:                   1st of April and mass-production in July 1978
+Vendor:                    Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado
+Form factor:		   Upright arcade cabinet and cocktail table (table-top) cabinet 
+CPU:                       Intel 8080 / 1.9968 MHz Clock (Released in 1974)
+Barrel Shifter:		   The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM.
+                           Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU.
+Sound:                     Texas Instrument SN76477 and analog circuits
+Video:                     Monitor: Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°
+                           Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO
+                           Game box resolution: 256 x 224 pixels
+                           Display box: (non-interlaced) 320 Lines x 262 Dots
+                           Frame Rate: 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)
+                           Graphic Memory: 1bit per pixel => 256 x 224 / 8 = 7Kbytes
 	
 Interrupt Handling:
 The game software is only allowed to write into the graphics memory when the CRTs electron beam is not drawing the object to be updated. Two interrupts (vector RST 8 in the middle of the screen and RST 10 at the end) tell the code when to update the already refreshed part of the screen.
@@ -57,7 +57,7 @@ C000 - DFFF - ROM shadow
 E000 - FFFF - RAM shadow
 
 
-CPU Input/Output Ports:
+## CPU Input/Output Ports:
 The 8080 CPU uses input and output ports to communicate with the outside world.
 DIP switches are used to configure the game, whereas several port inputs handle the buttons to control the gameplay.
 The output ports are mainly used to control the sound generation. A notable exception is the communication towards the external shift register to realize the invader movements.
@@ -68,72 +68,71 @@ If for example SW3 is set to ON then the signal at bit 0 of port 0 is set to 0.
 Input Ports:
 
 Port 0
- bit 0 = SW3 (1 = RAM & Sound self-test-request at power up) (inverted)
- bit 1 = Always 1
- bit 2 = Always 1
- bit 3 = Always 1
- bit 4 = Fire
- bit 5 = Left
- bit 6 = Right
- bit 7 = n.a.
+bit 0 = SW3 (1 = RAM & Sound self-test-request at power up) (inverted)
+bit 1 = Always 1
+bit 2 = Always 1
+bit 3 = Always 1
+bit 4 = Fire
+bit 5 = Left
+bit 6 = Right
+bit 7 = n.a.
 
 Port 1
- bit 0 = CREDIT 
- bit 1 = 2P start 
- bit 2 = 1P start 
- bit 3 = Always 1 
- bit 4 = 1P shot
- bit 5 = 1P left
- bit 6 = 1P right
- bit 7 = n.a.
+bit 0 = CREDIT 
+bit 1 = 2P start
+bit 2 = 1P start
+bit 3 = Always 1
+bit 4 = 1P shot
+bit 5 = 1P left
+bit 6 = 1P right
+bit 7 = n.a.
 
 Port 2
- bit 0 = SW1  11 = 3 ships  10 = 5 ships (inverted)
- bit 1 = SW2  01 = 4 ships  00 = 6 ships (inverted)
- bit 2 = Tilt switch
- bit 3 = SW4  1 = extra ship at 1500, 0 = extra ship at 1000 (inverted)
- bit 4 = 2P shot
- bit 5 = 2P left
- bit 6 = 2P right
- bit 7 = SW8  1 = Coin info displayed in demo screen (inverted)
+bit 0 = SW1  11 = 3 ships  10 = 5 ships (inverted)
+bit 1 = SW2  01 = 4 ships  00 = 6 ships (inverted)
+bit 2 = Tilt switch
+bit 3 = SW4  1 = extra ship at 1500, 0 = extra ship at 1000 (inverted)
+bit 4 = 2P shot
+bit 5 = 2P left
+bit 6 = 2P right
+bit 7 = SW8  1 = Coin info displayed in demo screen (inverted)
 
 Port 3
- bit 0-7 External shift register data input
- 
+bit 0-7 External shift register data input
+
 
 Output Ports:
 
 Port 2:
- bit 0,1,2 Provides the shift amount to the external shift register
+bit 0,1,2 Provides the shift amount to the external shift register
 
 Port 3:
- bit 0 = UFO
- bit 1 = Shot
- bit 2 = Player has been hit
- bit 3 = Invader has been hit
- bit 4 = Extended play
- bit 5 = AMP enable          
- bit 6 = n.a.
- bit 7 = n.a.
- 
+bit 0 = UFO
+bit 1 = Shot
+bit 2 = Player has been hit
+bit 3 = Invader has been hit
+bit 4 = Extended play
+bit 5 = AMP enable
+bit 6 = n.a.
+bit 7 = n.a.
+
 Port 4:
- bit 0-7 External shift register data output (LSB on 1st write, MSB on 2nd)
+bit 0-7 External shift register data output (LSB on 1st write, MSB on 2nd)
 
 Port 5:
- bit 0 = Fleet 1
- bit 1 = Fleet 2
- bit 2 = Fleet 3
- bit 3 = Fleet 4
- bit 4 = UFO Hit
- bit 5 = Flip the screen vertically for the cocktail table version in 2 player mode 
- bit 6 = n.a.
- bit 7 = n.a.
+bit 0 = Fleet 1
+bit 1 = Fleet 2
+bit 2 = Fleet 3
+bit 3 = Fleet 4
+bit 4 = UFO Hit
+bit 5 = Flip the screen vertically for the cocktail table version in 2 player mode 
+bit 6 = n.a.
+bit 7 = n.a.
 
 Port 6:
- Watchdog signal
+Watchdog signal
 
-
-Invaders Emulator Features:
+## Invaders Emulator Features:
 
 - Emulation of the hardware:
     + Intel 8080 CPU, RAM and ROM
@@ -185,22 +184,22 @@ The folder ini_file_templates contains configuration templates for each of the b
 Copy the ROM matching ini file (e.g. invaders.sitv1) into the invaders main folder and rename it to invaders.ini to make sure that the ROMs are correctly loaded and memory mapped. Details of the memory mapping are well documented in the MAME source code: midw8080/8080bw.cpp [7]
 
 The following MAME ROM versions have been tested:
-sitv1      TV revision 1 (including self test option - DIP SW3)
-sisv2      SV revision 2 (black & white)
-invaders   Midway version
-sitv       TV revision 2 (including self test option - DIP SW3)
-sisv3      SV revision 3 (black & white)
-sisv       SV revision 4 (black & white)
-tst_invd   Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions
+sitv1        TV revision 1 (including self test option - DIP SW3)
+sisv2        SV revision 2 (black & white)
+invaders     Midway version
+sitv         TV revision 2 (including self test option - DIP SW3)
+sisv3        SV revision 3 (black & white)
+sisv         SV revision 4 (black & white)
+tst_invd     Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions
 
 
-Emulator Audio Output:
+## Emulator Audio Output:
 For copyright reasons it is not possible to provide the sound samples.
 Find (Google ...) and add the wav files to the samples folder to activate the audio output.
 Configure the mapping between the SI sound effects and the sample filenames in the invaders.ini file.
 
 
-Emulator performance und supported hardware:
+## Emulator performance und supported hardware:
 The emulator must be able to execute CPU clock / video frames per second (1.9968 MHz / 59.541985Hz) opcode cycles within 1 / video frames per second to make sure that the video RAM is fully refreshed in realtime.
 In numbers: 33,536 cycles in 16.8ms
 
@@ -211,7 +210,7 @@ Intel Core i7 6700HQ (old ThinkPad)                 < 1.5ms
 ARM Cortex-A76       (Orange PI 5B)                 < 2ms
 
 
-Configuration file (invaders.ini):
+## Configuration file (invaders.ini):
 The ini file allows the full configuration of the application. For example the DIP switch settings of the arcade cabinet or the video graphics output mode.
 The configuration lines start with a keyword and each line item is separated by a space or tab.
 Please refer to the ini_file_templates folder provided by the download and GitHub [1].
