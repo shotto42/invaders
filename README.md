@@ -6,7 +6,7 @@ The Invaders Emulator runs the arcade machine ROMs on simulated Space Invaders h
 ## Motivation and why just another SI emulator?
 SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.
 Despite of the already existing SI emulations (e.g. MAME [5]) it is still worth to build an open source application that is easy to configure to build DIY arcade cabinets or just for playing the game which wrote history that must be preserved.
-Furthermore, where is the fun when we don't dig deeper into the inner workings of the SI arcade machine.
+Furthermore, where is the fun when we don't dig deeper into the inner workings of the SI arcade machine.  
 
 
 ## Space Invaders, a deeper look:
@@ -16,121 +16,122 @@ By the end of 1979, an estimated 750,000 Space Invaders machines were installed 
 
 computerarcheology.com [3] provides a great documentation of the SI hardware and software.
 
-Technical details (1st release):
-Release:            1st of April and mass-production in July 1978
-Vendor:             Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado
-Form factor:		Upright arcade cabinet and cocktail table (table-top) cabinet 
-CPU:                Intel 8080 / 1.9968 MHz Clock (Released in 1974)
-Barrel Shifter:		The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM.
-                    Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU.
-Sound:              Texas Instrument SN76477 and analog circuits
-Video:              Monitor: Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°
-                    Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO
-                    Game box resolution: 256 x 224 pixels
-                    Display box: (non-interlaced) 320 Lines x 262 Dots
-                    Frame Rate: 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)
-                    Graphic Memory: 1bit per pixel => 256 x 224 / 8 = 7Kbytes
-	
-Interrupt Handling:
-The game software is only allowed to write into the graphics memory when the CRTs electron beam is not drawing the object to be updated. Two interrupts (vector RST 8 in the middle of the screen and RST 10 at the end) tell the code when to update the already refreshed part of the screen.
+Technical details (1st release):  
+Release:		1st of April and mass-production in July 1978  
+Vendor:			Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado  
+Form factor:		Upright arcade cabinet and cocktail table (table-top) cabinet  
+CPU:                Intel 8080 / 1.9968 MHz Clock (Released in 1974)  
+Barrel Shifter:		The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM.  
+                    Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU.  
+                    Sound:              Texas Instrument SN76477 and analog circuits  
+                    Video:              Monitor: Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°  
+                    Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO  
+                    Game box resolution: 256 x 224 pixels  
+                    Display box: (non-interlaced) 320 Lines x 262 Dots  
+                    Frame Rate: 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)  
+                    Graphic Memory: 1bit per pixel => 256 x 224 / 8 = 7Kbytes  
 
-The memory mapping:
+  
+Interrupt Handling:  
+The game software is only allowed to write into the graphics memory when the CRTs electron beam is not drawing the object to be updated. Two interrupts (vector RST 8 in the middle of the screen and RST 10 at the end) tell the code when to update the already refreshed part of the screen.  
 
-ROM Mapping (depends on the ROM sizes which are mainly 2K):
-0000 - 07FF
-0800 - 0FFF
-1000 - 17FF
-1800 - 1FFF
+The memory mapping:  
 
-RAM Mapping
-2000 - 23FF 1K RAM
-2400 - 3FFF 7K Video RAM
+ROM Mapping (depends on the ROM sizes which are mainly 2K):  
+0000 - 07FF  
+0800 - 0FFF  
+1000 - 17FF  
+1800 - 1FFF  
+  
+RAM Mapping  
+2000 - 23FF 1K RAM  
+2400 - 3FFF 7K Video RAM  
 
-Due to partial adressing the rest of the memory address space appears as shadow images of the ROM and RAM:
-4000 - 5FFF - ROM shadow
-6000 - 7FFF - RAM shadow
-8000 - 9FFF - ROM shadow
-A000 - BFFF - RAM shadow
-C000 - DFFF - ROM shadow
-E000 - FFFF - RAM shadow
+Due to partial adressing the rest of the memory address space appears as shadow images of the ROM and RAM:  
+4000 - 5FFF - ROM shadow  
+6000 - 7FFF - RAM shadow  
+8000 - 9FFF - ROM shadow  
+A000 - BFFF - RAM shadow  
+C000 - DFFF - ROM shadow  
+E000 - FFFF - RAM shadow  
 
 
-CPU Input/Output Ports:
-The 8080 CPU uses input and output ports to communicate with the outside world.
-DIP switches are used to configure the game, whereas several port inputs handle the buttons to control the gameplay.
-The output ports are mainly used to control the sound generation. A notable exception is the communication towards the external shift register to realize the invader movements.
-
-The SW1 ... SW8 inputs are inverted before going into the CPU ports.
-If for example SW3 is set to ON then the signal at bit 0 of port 0 is set to 0.
-
+CPU Input/Output Ports:  
+The 8080 CPU uses input and output ports to communicate with the outside world.  
+DIP switches are used to configure the game, whereas several port inputs handle the buttons to control the gameplay.  
+The output ports are mainly used to control the sound generation. A notable exception is the communication towards the external shift register to realize the invader movements.  
+  
+The SW1 ... SW8 inputs are inverted before going into the CPU ports.  
+If for example SW3 is set to ON then the signal at bit 0 of port 0 is set to 0.  
+  
 Input Ports:
 
-Port 0
-bit 0 = SW3 (1 = RAM & Sound self-test-request at power up) (inverted)
-bit 1 = Always 1
-bit 2 = Always 1
-bit 3 = Always 1
-bit 4 = Fire
-bit 5 = Left
-bit 6 = Right
+Port 0  
+bit 0 = SW3 (1 = RAM & Sound self-test-request at power up) (inverted)  
+bit 1 = Always 1  
+bit 2 = Always 1  
+bit 3 = Always 1  
+bit 4 = Fire  
+bit 5 = Left  
+bit 6 = Right  
+bit 7 = n.a.  
+  
+Port 1  
+bit 0 = CREDIT  
+bit 1 = 2P start  
+bit 2 = 1P start  
+bit 3 = Always 1  
+bit 4 = 1P shot  
+bit 5 = 1P left  
+bit 6 = 1P right  
+bit 7 = n.a.  
+  
+Port 2  
+bit 0 = SW1  11 = 3 ships  10 = 5 ships (inverted)  
+bit 1 = SW2  01 = 4 ships  00 = 6 ships (inverted)  
+bit 2 = Tilt switch  
+bit 3 = SW4  1 = extra ship at 1500, 0 = extra ship at 1000 (inverted)  
+bit 4 = 2P shot  
+bit 5 = 2P left  
+bit 6 = 2P right  
+bit 7 = SW8  1 = Coin info displayed in demo screen (inverted)  
+  
+Port 3  
+bit 0-7 External shift register data input  
+
+  
+Output Ports:  
+  
+Port 2:  
+bit 0,1,2 Provides the shift amount to the external shift register  
+
+Port 3:  
+bit 0 = UFO  
+bit 1 = Shot  
+bit 2 = Player has been hit  
+bit 3 = Invader has been hit  
+bit 4 = Extended play  
+bit 5 = AMP enable  
+bit 6 = n.a.  
+bit 7 = n.a.  
+
+Port 4:  
+bit 0-7 External shift register data output (LSB on 1st write, MSB on 2nd)  
+
+Port 5:  
+bit 0 = Fleet 1  
+bit 1 = Fleet 2  
+bit 2 = Fleet 3  
+bit 3 = Fleet 4  
+bit 4 = UFO Hit  
+bit 5 = Flip the screen vertically for the cocktail table version in 2 player mode   
+bit 6 = n.a.  
 bit 7 = n.a.
 
-Port 1
-bit 0 = CREDIT
-bit 1 = 2P start
-bit 2 = 1P start
-bit 3 = Always 1
-bit 4 = 1P shot
-bit 5 = 1P left
-bit 6 = 1P right
-bit 7 = n.a.
-
-Port 2
-bit 0 = SW1  11 = 3 ships  10 = 5 ships (inverted)
-bit 1 = SW2  01 = 4 ships  00 = 6 ships (inverted)
-bit 2 = Tilt switch
-bit 3 = SW4  1 = extra ship at 1500, 0 = extra ship at 1000 (inverted)
-bit 4 = 2P shot
-bit 5 = 2P left
-bit 6 = 2P right
-bit 7 = SW8  1 = Coin info displayed in demo screen (inverted)
-
-Port 3
-bit 0-7 External shift register data input
-
-
-Output Ports:
-
-Port 2:
-bit 0,1,2 Provides the shift amount to the external shift register
-
-Port 3:
-bit 0 = UFO
-bit 1 = Shot
-bit 2 = Player has been hit
-bit 3 = Invader has been hit
-bit 4 = Extended play
-bit 5 = AMP enable
-bit 6 = n.a.
-bit 7 = n.a.
-
-Port 4:
-bit 0-7 External shift register data output (LSB on 1st write, MSB on 2nd)
-
-Port 5:
-bit 0 = Fleet 1
-bit 1 = Fleet 2
-bit 2 = Fleet 3
-bit 3 = Fleet 4
-bit 4 = UFO Hit
-bit 5 = Flip the screen vertically for the cocktail table version in 2 player mode 
-bit 6 = n.a.
-bit 7 = n.a.
-
-Port 6:
+Port 6:  
 Watchdog signal
 
-
+  
 ## Invaders Emulator Features:
 - Emulation of the hardware:
     + Intel 8080 CPU, RAM and ROM
@@ -152,16 +153,16 @@ Watchdog signal
 	+ Because the game is alternating between player 1 & 2, their controls are mapped on all input devices in parallel
 
 
-Keyboard controls:
-c          Coin
-1          1 player game
-2          2 player game
-<-         Move laser base to the left
-->         Move laser base to the right
-Space      Fire
+Keyboard controls:  
+c          Coin  
+1          1 player game  
+2          2 player game  
+<-         Move laser base to the left  
+->         Move laser base to the right  
+Space      Fire  
 t          Simulate the tilting of the arcade machine
-
-
+  
+  
 PlayStation/Xbox style gamepad button mapping:
 
 < Insert Gamepad Image >
