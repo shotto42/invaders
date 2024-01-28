@@ -1,6 +1,4 @@
-# Invaders Emulator
-
-Emulation of the Arcade Game Space Invaders
+# Emulation of the Arcade Game Space Invaders
 
 The Invaders Emulator runs the arcade machine ROMs on simulated Space Invaders hardware.
 
@@ -19,19 +17,19 @@ By the end of 1979, an estimated 750,000 Space Invaders machines were installed 
 computerarcheology.com [3] provides a great documentation of the SI hardware and software.
 
 Technical details (1st release):
-Release:                   1st of April and mass-production in July 1978
-Vendor:                    Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado
-Form factor:		   Upright arcade cabinet and cocktail table (table-top) cabinet 
-CPU:                       Intel 8080 / 1.9968 MHz Clock (Released in 1974)
-Barrel Shifter:		   The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM.
-                           Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU.
-Sound:                     Texas Instrument SN76477 and analog circuits
-Video:                     Monitor: Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°
-                           Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO
-                           Game box resolution: 256 x 224 pixels
-                           Display box: (non-interlaced) 320 Lines x 262 Dots
-                           Frame Rate: 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)
-                           Graphic Memory: 1bit per pixel => 256 x 224 / 8 = 7Kbytes
+Release:            1st of April and mass-production in July 1978
+Vendor:             Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado
+Form factor:		Upright arcade cabinet and cocktail table (table-top) cabinet 
+CPU:                Intel 8080 / 1.9968 MHz Clock (Released in 1974)
+Barrel Shifter:		The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM.
+                    Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU.
+Sound:              Texas Instrument SN76477 and analog circuits
+Video:              Monitor: Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°
+                    Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO
+                    Game box resolution: 256 x 224 pixels
+                    Display box: (non-interlaced) 320 Lines x 262 Dots
+                    Frame Rate: 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)
+                    Graphic Memory: 1bit per pixel => 256 x 224 / 8 = 7Kbytes
 	
 Interrupt Handling:
 The game software is only allowed to write into the graphics memory when the CRTs electron beam is not drawing the object to be updated. Two interrupts (vector RST 8 in the middle of the screen and RST 10 at the end) tell the code when to update the already refreshed part of the screen.
@@ -39,14 +37,14 @@ The game software is only allowed to write into the graphics memory when the CRT
 The memory mapping:
 
 ROM Mapping (depends on the ROM sizes which are mainly 2K):
-1.  0000-07FF
-2.  0800-0FFF
-3.  1000-17FF
-4.  1800-1FFF
+0000 - 07FF
+0800 - 0FFF
+1000 - 17FF
+1800 - 1FFF
 
 RAM Mapping
-2000-23FF 1K RAM
-2400-3FFF 7K Video RAM
+2000 - 23FF 1K RAM
+2400 - 3FFF 7K Video RAM
 
 Due to partial adressing the rest of the memory address space appears as shadow images of the ROM and RAM:
 4000 - 5FFF - ROM shadow
@@ -78,7 +76,7 @@ bit 6 = Right
 bit 7 = n.a.
 
 Port 1
-bit 0 = CREDIT 
+bit 0 = CREDIT
 bit 1 = 2P start
 bit 2 = 1P start
 bit 3 = Always 1
