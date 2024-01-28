@@ -1,6 +1,6 @@
 # Emulation of the Arcade Game Space Invaders
 
-The Invaders Emulator runs the arcade machine ROMs on simulated Space Invaders hardware.
+The Invaders Emulator runs the arcade machine ROMs on simulated arcade hardware.
 
 
 ## Motivation and why just another SI emulator?
@@ -218,6 +218,7 @@ The ini file allows the full configuration of the application. For example the D
 The configuration lines start with a keyword and each line item is separated by a space or tab.
 Please refer to the ini_file_templates folder provided by the download and GitHub [1].
 
+```
 ROM_ADDRESSES:  0x0000 0x0800 0x1000 0x1800
 ROM_FILES:      invaders.h invaders.g invaders.f invaders.e
 SOUND_FILES:    UFO_F.wav MISSL.wav LAU_H.wav INV_H.wav EXTRA.wav INV_1.wav INV_2.wav INV_3.wav INV_4.wav UFO_H.wav
@@ -287,51 +288,52 @@ Don't use that option together with the flip because the table mode has no semi-
 Scaling_Mode:
 0 = Nearest
 1 = Linear
-2 = Best
+2 = Best  
+```
 
-
-## Building and running
-Download, Source Code Compilation and SDL2 Libraries:
-Keep in mind that you need the appropriate MAME ROMs (pls. see above) to play the game.
-
+## Building and running  
+Download, Source Code Compilation and SDL2 Libraries:  
+Keep in mind that you need the appropriate MAME ROMs (pls. see above) to play the game.  
+  
 Windows:
-Either download the pre-compiled Invaders Emulator or use MSYS2/MINGW64 [12] to compile from source [1].
-
+Either download the pre-compiled Invaders Emulator or use MSYS2/MINGW64 [12] to compile from source [1].  
+  
 Linux:
 As pre-requisite compile and install the SDL2 [9], SDL2_mixer [10] and SDL2_image [11] libraries.
-For each of the three libraries enter the associated folder and execute the following:
-
+For each of the three libraries enter the associated folder and execute the following:  
+```
 $ ./configure
 $ make
 $ sudo make install
-
-The libraries are installed under /usr/local/lib/
-
-Compile the Invaders Emulator:
-Clone the project from GitHub [1] and type make to start the compilation.
-Go into the bin/ folder and type ./invaders to start the application.
-Make sure that the library path /usr/local/lib is part of the LD_LIBRARY_PATH system variable.
+```
+  
+The libraries are installed under /usr/local/lib/  
+  
+Compile the Invaders Emulator:  
+Clone the project from GitHub [1] and type make to start the compilation.  
+Go into the bin/ folder and type ./invaders to start the application.  
+Make sure that the library path /usr/local/lib is part of the LD_LIBRARY_PATH system variable.  
 If the application exits with a "symbol not found" error than add the lib path temporarily by executing the following command:
-
+```
 $ export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
+```
 
+macOS:  
+Up to now it hasn't been tested whether the compilation works on Apple machines but there shouldn't be any reason that prevents it.  
 
-macOS:
-Up to now it hasn't been tested whether the compilation works on Apple machines but there shouldn't be any reason that prevents it.
-
-
-## References:
-[1]  https://github.com/shotto42/invaders
-[2]  https://en.wikipedia.org/wiki/Space_Invaders
-[3]  https://computerarcheology.com/Arcade/SpaceInvaders/
-[4]  https://github.com/intarga/i8080e/tree/master
-[5]  https://www.mamedev.org/ 
-[6]  https://github.com/mamedev/mame/blob/master/src/devices/cpu/i8085/i8085.cpp
-[7]  https://github.com/mamedev/mame/blob/master/src/mame/midw8080/8080bw.cpp
-[8]  https://www.libsdl.org/
-[9]  https://github.com/libsdl-org/SDL/releases
-[10] https://github.com/libsdl-org/SDL_mixer/releases
-[11] https://github.com/libsdl-org/SDL_image/releases
+  
+## References:  
+[1]  https://github.com/shotto42/invaders  
+[2]  https://en.wikipedia.org/wiki/Space_Invaders  
+[3]  https://computerarcheology.com/Arcade/SpaceInvaders/  
+[4]  https://github.com/intarga/i8080e/tree/master  
+[5]  https://www.mamedev.org/  
+[6]  https://github.com/mamedev/mame/blob/master/src/devices/cpu/i8085/i8085.cpp  
+[7]  https://github.com/mamedev/mame/blob/master/src/mame/midw8080/8080bw.cpp  
+[8]  https://www.libsdl.org/  
+[9]  https://github.com/libsdl-org/SDL/releases  
+[10] https://github.com/libsdl-org/SDL_mixer/releases  
+[11] https://github.com/libsdl-org/SDL_image/releases  
 [12] https://www.msys2.org/
 
 
