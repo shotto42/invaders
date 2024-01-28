@@ -32,10 +32,10 @@ computerarcheology.com [3] provides a great documentation of the SI hardware and
 | Graphic Memory: | 1bit per pixel => 256 x 224 / 8 = 7Kbytes  
 
   
-Interrupt Handling:  
+**Interrupt Handling:**  
 The game software is only allowed to write into the graphics memory when the CRTs electron beam is not drawing the object to be updated. Two interrupts (vector RST 8 in the middle of the screen and RST 10 at the end) tell the code when to update the already refreshed part of the screen.  
 
-The memory mapping:  
+**The memory mapping:**  
 ```
 ROM Mapping (depends on the ROM sizes which are mainly 2K):  
 0000 - 07FF  
@@ -56,7 +56,7 @@ C000 - DFFF - ROM shadow
 E000 - FFFF - RAM shadow  
 ```
 
-CPU Input/Output Ports:  
+**CPU Input/Output Ports:**  
 The 8080 CPU uses input and output ports to communicate with the outside world.  
 DIP switches are used to configure the game, whereas several port inputs handle the buttons to control the gameplay.  
 The output ports are mainly used to control the sound generation. A notable exception is the communication towards the external shift register to realize the invader movements.  
@@ -64,7 +64,7 @@ The output ports are mainly used to control the sound generation. A notable exce
 The SW1 ... SW8 inputs are inverted before going into the CPU ports.  
 If for example SW3 is set to ON then the signal at bit 0 of port 0 is set to 0.  
   
-Input Ports:
+**Input Ports:**
 ```
 Port 0  
 bit 0 = SW3 (1 = RAM & Sound self-test-request at power up) (inverted)  
@@ -100,7 +100,7 @@ Port 3
 bit 0-7 External shift register data input  
 ```
   
-Output Ports:  
+**Output Ports:**  
 ```
 Port 2:  
 bit 0,1,2 Provides the shift amount to the external shift register  
@@ -133,7 +133,7 @@ Watchdog signal
 ```
   
 ## Invaders Emulator Features:  
-Emulation of the hardware:  
+**Emulation of the hardware:**  
 + Intel 8080 CPU, RAM and ROM
 + Full screen mode to be used in DIY arcade cabinets
 + Vertical screen flip in 2 player cocktail table mode
@@ -143,18 +143,17 @@ Emulation of the hardware:
 + Arcade cabinet DIP switches for the game configuration
 + Tilt switch simulation. Yes, the arcade cabinet used a tilt detection.
 	
-Fully configurable by an invaders.ini file:  
+**Fully configurable by an invaders.ini file:**  
 + Load different ROMs and configure the memory mapping
 + Load configurable SI audio samples
 + Set the arcade DIP switches to configure the number of laser bases and the bonus point level for awarding extra laser bases
 + Configure the video graphics output (B&W vs. color, rotation, flipping, fullscreen as well as the background image)
 
-
-Control inputs via keys and up to 2 gamepads  
+**Control inputs via keys and up to 2 gamepads**  
 + Because the game is alternating between player 1 & 2, their controls are mapped on all input devices in parallel
 
   
-Keyboard controls:
+**Keyboard controls:**
 | Key      | Function
 |----------|---------------|
 | c        | Coin  
@@ -177,7 +176,7 @@ Because there are already working Intel 8080 CPU emulations like MAME (cpu/i8085
 The arcade system simulation has been freshly implemented to cover the above mentioned features.
 
 
-Game ROMs:  
+**Game ROMs:**  
 For copyright reasons it is not allowed to distribute the ROM files!  
 The Invaders Emulation works with MAME ROMs (Google ...).  
 Unzip the ROM files and copy the content into the rom folder.  
@@ -185,7 +184,7 @@ Unzip the ROM files and copy the content into the rom folder.
 The folder ini_file_templates contains configuration templates for each of the below listed ROM sets.  
 Copy the ROM matching ini file (e.g. invaders.sitv1) into the invaders main folder and rename it to invaders.ini to make sure that the ROMs are correctly loaded and memory mapped. Details of the memory mapping are well documented in the MAME source code: midw8080/8080bw.cpp [7]
 
-The following MAME ROM versions have been tested:
+**The following MAME ROM versions have been tested:**
 | MAME      | Description                                                     |
 | ----------|-----------------------------------------------------------------|
 |sitv1      | TV revision 1 (including self test option - DIP SW3)
@@ -197,7 +196,7 @@ The following MAME ROM versions have been tested:
 | tst_invd  | Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions  
   
   
-Emulator Audio Output:  
+**Emulator Audio Output:**  
 For copyright reasons it is not possible to provide the sound samples.  
 Find (Google ...) and add the wav files to the samples folder to activate the audio output.  
 Configure the mapping between the SI sound effects and the sample filenames in the invaders.ini file.  
@@ -295,11 +294,13 @@ Scaling_Mode:
 ## Building and running  
 Download, Source Code Compilation and SDL2 Libraries:  
 Keep in mind that you need the appropriate MAME ROMs (pls. see above) to play the game.  
+Furthermore, add SI sound samples (pls. see above) to the samples folder to activate the games audio output.
   
-Windows:
+**Windows:**  
 Either download the pre-compiled Invaders Emulator or use MSYS2/MINGW64 [12] to compile from source [1].  
   
-Linux:
+  
+**Linux:**
 As pre-requisite compile and install the SDL2 [9], SDL2_mixer [10] and SDL2_image [11] libraries.
 For each of the three libraries enter the associated folder and execute the following:  
 ```
@@ -310,8 +311,8 @@ $ sudo make install
   
 The libraries are installed under /usr/local/lib/  
   
-Compile the Invaders Emulator:  
-Clone the project from GitHub [1] and type make to start the compilation.  
+**Compile the Invaders Emulator:**  
+Clone the project from GitHub [1] and type make to compile the application.  
 Go into the bin/ folder and type ./invaders to start the application.  
 Make sure that the library path /usr/local/lib is part of the LD_LIBRARY_PATH system variable.  
 If the application exits with a "symbol not found" error than add the lib path temporarily by executing the following command:
