@@ -2,6 +2,7 @@
 
 The Invaders Emulator runs the arcade machine ROMs on simulated arcade hardware.
 
+![Screenshot of the Invaders Emulator](https://hotto.de/wp-content/uploads/2024/01/color_rotated.jpg)
 
 ## Motivation and why just another SI emulator?
 SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.
@@ -167,7 +168,7 @@ Watchdog signal
   
 PlayStation/Xbox style gamepad button mapping:
 
-< Insert Gamepad Image >
+![Gamepad Button Mapping](https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg)
 
 
 ## The Software Implementation:
@@ -320,7 +321,7 @@ If the application exits with a "symbol not found" error than add the lib path t
 $ export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
 ```
 
-macOS:  
+**macOS:**  
 Up to now it hasn't been tested whether the compilation works on Apple machines but there shouldn't be any reason that prevents it.  
 
   
