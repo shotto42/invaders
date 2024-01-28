@@ -26,7 +26,7 @@ Technical details (1st release):
 | Barrel Shifter: | The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM. Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU. 
 | Sound:          | Texas Instrument SN76477 and analog circuits  
 | Video Monitor:  | Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°  
-| Color:          | Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO  
+| Color:          | Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO  
 | Game box:       | Resolution: 256 x 224 pixels  
 | Display box:    | Non-interlaced 320 Lines x 262 Dots  
 | Frame Rate:     | 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)  
@@ -133,27 +133,28 @@ Port 6:
 Watchdog signal
 
   
-## Invaders Emulator Features:
-- Emulation of the hardware:
-    + Intel 8080 CPU, RAM and ROM
-	+ Full screen mode to be used in DIY arcade cabinets
-	+ Vertical screen flip in 2 player cocktail table mode
-	+ Video graphics handling by using texture overlays (cellophane simulation for color) and SDL2 texture rotation/flipping 
-	+ Sound output loading wav samples
-	+ External Bit-Shifter to move the invaders in video memory
-	+ Arcade cabinet DIP switches for the game configuration
-	+ Tilt switch simulation. Yes, the arcade cabinet used a tilt detection.
+## Invaders Emulator Features:  
+Emulation of the hardware:  
++ Intel 8080 CPU, RAM and ROM
++ Full screen mode to be used in DIY arcade cabinets
++ Vertical screen flip in 2 player cocktail table mode
++ Video graphics handling by using texture overlays (cellophane simulation for color) and SDL2 texture rotation/flipping
++ Sound output loading wav samples
++ External Bit-Shifter to move the invaders in video memory
++ Arcade cabinet DIP switches for the game configuration
++ Tilt switch simulation. Yes, the arcade cabinet used a tilt detection.
 	
-- Fully configurable by an invaders.ini file:
-	+ Load different ROMs and configure the memory mapping
-	+ Load configurable SI audio samples
-	+ Set the arcade DIP switches to configure the number of laser bases and the bonus point level for awarding extra laser bases
-	+ Configure the video graphics output (B&W vs. color, rotation, flipping, fullscreen as well as the background image)
-	
-- Control inputs via keys and up to 2 gamepads
-	+ Because the game is alternating between player 1 & 2, their controls are mapped on all input devices in parallel
+Fully configurable by an invaders.ini file:  
++ Load different ROMs and configure the memory mapping
++ Load configurable SI audio samples
++ Set the arcade DIP switches to configure the number of laser bases and the bonus point level for awarding extra laser bases
++ Configure the video graphics output (B&W vs. color, rotation, flipping, fullscreen as well as the background image)
 
 
+Control inputs via keys and up to 2 gamepads  
++ Because the game is alternating between player 1 & 2, their controls are mapped on all input devices in parallel
+
+  
 Keyboard controls:
 | Key      | Function
 |----------|---------------|
@@ -163,8 +164,8 @@ Keyboard controls:
 | <-       | Move laser base to the left  
 | ->       | Move laser base to the right  
 | Space    | Fire  
-| t        | Simulate the tilting of the arcade machine
-  
+| t        | Simulate the tilting of the arcade machine  
+
   
 PlayStation/Xbox style gamepad button mapping:
 
