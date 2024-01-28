@@ -2,7 +2,7 @@
 
 The Invaders Emulator runs the arcade machine ROMs on simulated arcade hardware.
 
-![Screenshot of the Invaders Emulator](https://hotto.de/wp-content/uploads/2024/01/color_rotated.jpg)
+<img src="https://hotto.de/wp-content/uploads/2024/01/color_rotated.jpg" width="300" />
 
 ## Motivation and why just another SI emulator?
 SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.
@@ -168,9 +168,9 @@ Watchdog signal
   
 PlayStation/Xbox style gamepad button mapping:
 
-![Gamepad Button Mapping](https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg)
+<img src="https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg" width="500" />
 
-
+	
 ## The Software Implementation:
 The emulation has been written in C and makes use of SDL2 (video and inputs) [9], SDL2_mixer (sound) [10] as well as SDL2_image (background image) [11]  
 Because there are already working Intel 8080 CPU emulations like MAME (cpu/i8085/i8085.cpp) [6], the decision has been taken to go for a well working MIT licensed GitHub project intarga/i8080 [4]. The CPU code has been adapted by moving the port input/output handling into the CPU emulation to avoid opcode interpretation outside of the CPU.  
@@ -293,7 +293,7 @@ Scaling_Mode:
 ```
 
 ## Building and running  
-Download, Source Code Compilation and SDL2 Libraries:  
+**Download, Source Code Compilation and SDL2 Libraries:**  
 Keep in mind that you need the appropriate MAME ROMs (pls. see above) to play the game.  
 Furthermore, add SI sound samples (pls. see above) to the samples folder to activate the games audio output.
   
@@ -301,7 +301,7 @@ Furthermore, add SI sound samples (pls. see above) to the samples folder to acti
 Either download the pre-compiled Invaders Emulator or use MSYS2/MINGW64 [12] to compile from source [1].  
   
   
-**Linux:**
+**Linux:**  
 As pre-requisite compile and install the SDL2 [9], SDL2_mixer [10] and SDL2_image [11] libraries.
 For each of the three libraries enter the associated folder and execute the following:  
 ```
