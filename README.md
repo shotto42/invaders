@@ -16,20 +16,21 @@ By the end of 1979, an estimated 750,000 Space Invaders machines were installed 
 
 computerarcheology.com [3] provides a great documentation of the SI hardware and software.
 
-Technical details (1st release):  
-Release:		1st of April and mass-production in July 1978  
-Vendor:			Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado  
-Form factor:		Upright arcade cabinet and cocktail table (table-top) cabinet  
-CPU:                Intel 8080 / 1.9968 MHz Clock (Released in 1974)  
-Barrel Shifter:		The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM.  
-                    Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU.  
-                    Sound:              Texas Instrument SN76477 and analog circuits  
-                    Video:              Monitor: Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°  
-                    Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO  
-                    Game box resolution: 256 x 224 pixels  
-                    Display box: (non-interlaced) 320 Lines x 262 Dots  
-                    Frame Rate: 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)  
-                    Graphic Memory: 1bit per pixel => 256 x 224 / 8 = 7Kbytes  
+Technical details (1st release):
+| Col 1           | Col 2
+|-----------------|-------------------------------------------------------
+| Release:	  | 1st of April and mass-production in July 1978
+| Vendor:	  | Taito (licensed to Midway); Lead Developer: Tomohiro Nishikado
+| Form factor:	  | Upright arcade cabinet and cocktail table (table-top) cabinet  
+| CPU:            | Intel 8080 / 1.9968 MHz Clock (Released in 1974)  
+| Barrel Shifter: | The 8080 does not provide a fast and wide enough shift operation to handle the Invader shifts in video RAM. Therefore, a 2-byte external shift register mapped to input- and output-ports supports the CPU. 
+| Sound:          | Texas Instrument SN76477 and analog circuits  
+| Video Monitor:  | Black-and-white cathode-ray tube (CRT) rotated counter-clockwise by 90°  
+| Color:          | Color: Cellophane overlays create green laser bases and a magenta (Taito) or orange (Midway) UFO  
+| Game box:       | Resolution: 256 x 224 pixels  
+| Display box:    | Non-interlaced 320 Lines x 262 Dots  
+| Frame Rate:     | 59,541985Hz at 15.6kHz CRT line frequency (pixel clock 4.992 MHz)  
+| Graphic Memory: | 1bit per pixel => 256 x 224 / 8 = 7Kbytes  
 
   
 Interrupt Handling:  
@@ -153,14 +154,16 @@ Watchdog signal
 	+ Because the game is alternating between player 1 & 2, their controls are mapped on all input devices in parallel
 
 
-Keyboard controls:  
-c          Coin  
-1          1 player game  
-2          2 player game  
-<-         Move laser base to the left  
-->         Move laser base to the right  
-Space      Fire  
-t          Simulate the tilting of the arcade machine
+Keyboard controls:
+| Key      | Function
+|----------|---------------|
+| c        | Coin  
+| 1        | 1 player game  
+| 2        | 2 player game  
+| <-       | Move laser base to the left  
+| ->       | Move laser base to the right  
+| Space    | Fire  
+| t        | Simulate the tilting of the arcade machine
   
   
 PlayStation/Xbox style gamepad button mapping:
