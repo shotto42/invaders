@@ -166,11 +166,13 @@ Watchdog signal
 | t        | Simulate the tilting of the arcade machine  
 
   
-PlayStation/Xbox style gamepad button mapping:
+**PlayStation/Xbox style gamepad button mapping:**
 
-<img src="https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg" width="500" />
+<img src="https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg" width="400" />
 
-	
+<img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_1.jpg" width="400" />
+
+
 ## The Software Implementation:
 The emulation has been written in C and makes use of SDL2 (video and inputs) [9], SDL2_mixer (sound) [10] as well as SDL2_image (background image) [11]  
 Because there are already working Intel 8080 CPU emulations like MAME (cpu/i8085/i8085.cpp) [6], the decision has been taken to go for a well working MIT licensed GitHub project intarga/i8080 [4]. The CPU code has been adapted by moving the port input/output handling into the CPU emulation to avoid opcode interpretation outside of the CPU.  
