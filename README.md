@@ -311,7 +311,7 @@ Furthermore, add SI sound samples (pls. see above) to the samples folder to acti
   
 **Windows:**  
 Either download the pre-compiled Invaders Emulator or use MSYS2/MINGW64 [12] to compile from source [1].  
-To compile against the three SDL2 DLL libraries copy them into the lib folder.  
+To compile against the SDL2 DLL libraries (SDL2.dll, SDL2_mixer.dll, SDL2_image.dll) copy them into the lib folder.  
 Furthermore, to make it easy just copy the DLLs into the bin folder for application execution.
   
   
