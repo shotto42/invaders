@@ -207,7 +207,7 @@ Copy the ROM matching ini file (e.g. invaders.sitv1) into the invaders bin/ fold
 | sitv      | TV revision 2 (including self test option - DIP SW3)            |
 | sisv3     | SV revision 3 (black & white)                                   |
 | sisv      | SV revision 4 (black & white)                                   |
-| tst_invd  | Test Rom to execute the arcade self check beside of the TV revision 1 & 2 versions |  
+| tst_invd  | Test ROM to execute the arcade self check beside of the TV revision 1 & 2 versions |  
   
   
 **Emulator Audio Output:**  
