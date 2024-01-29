@@ -3,13 +3,13 @@ https://hotto.de/software-hardware/emulation-of-the-arcade-game-space-invaders/
 
 # Emulation of the Arcade Game Space Invaders
 
-The Invaders Emulator runs the arcade machine ROMs on simulated arcade hardware.
+**The Invaders Emulator runs the arcade machine ROMs on simulated arcade hardware.**
 
 <img src="https://hotto.de/wp-content/uploads/2024/01/color_rotated.jpg" width="300" /> <img src="https://hotto.de/wp-content/uploads/2024/01/si_background.jpg" width="300" />
 
 ## Motivation and why just another SI emulator?
-SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.
-Despite of the already existing SI emulations (e.g. MAME [5]) it is still worth to build an open source application that is easy to configure to build DIY arcade cabinets or just for playing the game which wrote history that must be preserved.
+SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.  
+Despite of the already existing SI emulations (e.g. MAME [5]) it is still worth to build an open source application that is easy to configure to build DIY arcade cabinets or just for playing the game which wrote history that must be preserved.  
 Furthermore, where is the fun when we don't dig deeper into the inner workings of the SI arcade machine.  
 
 
@@ -186,7 +186,7 @@ The arcade system simulation has been freshly implemented to cover the above men
 
 
 **Game ROMs:**  
-For copyright reasons it is not allowed to distribute the ROM files!  
+For copyright reasons it is not allowed to distribute the ROM files.  
 The Invaders Emulation works with MAME ROMs (Google ...).  
 Unzip the ROM files and copy the content into the rom folder.  
   
@@ -212,8 +212,8 @@ Configure the mapping between the SI sound effects and the sample filenames in t
   
   
 ## Emulator performance und supported hardware:
-The emulator must be able to execute CPU clock / video frames per second (1.9968 MHz / 59.541985Hz) opcode cycles within 1 / video frames per second to make sure that the video RAM is fully refreshed in realtime.  
-In numbers: 33,536 cycles in 16.8ms  
+The emulator must be able to execute "CPU clock / video frames per second" (1.9968 MHz / 59.541985Hz) opcode cycles within "1 / video frames per second" to make sure that the video RAM is fully refreshed in realtime.  
+In numbers: 33,536 cycles in **16.8ms**  
 
 The Invaders Emulator is a single core application and has been tested on the following CPUs:
 ```
@@ -223,8 +223,8 @@ ARM Cortex-A76       (Orange PI 5B)                 < 2ms
 ```
 
 ## Configuration file (invaders.ini):
-The ini file allows the full configuration of the application. For example the DIP switch settings of the arcade cabinet or the video graphics output mode.
-The configuration lines start with a keyword and each line item is separated by a space or tab.
+The ini file allows the full configuration of the application. For example the DIP switch settings of the arcade cabinet or the video graphics output mode.  
+The configuration lines start with a keyword and each line item is separated by a space or tab.  
 Please refer to the **ini_file_templates** folder provided by the download and GitHub [1].
 
 ```
