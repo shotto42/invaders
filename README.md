@@ -174,12 +174,13 @@ Watchdog signal
 | t        | Simulate the tilting of the arcade machine | 
 
   
-**PlayStation/Xbox style gamepad button mapping:**
-
+**PlayStation/Xbox style gamepad button mapping**  
 <img src="https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg" width="400" />  
-
-<img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_1.jpg" width="300" /> <img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_2.jpg" width="300" />
-
+  
+**2 Player Cocktail Table Mode**  
+<img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_1.jpg" width="300" /> <img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_2.jpg" width="300" />  
+  
+**Arcade Machine Self-Test and Tilting**  
 <img src="https://hotto.de/wp-content/uploads/2024/01/self_check.jpg" width="400" /> <img src="https://hotto.de/wp-content/uploads/2024/01/tilt.jpg" width="231" />
 
 
