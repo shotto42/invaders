@@ -1,4 +1,3 @@
-
 # Project Webpage:
 https://hotto.de/software-hardware/emulation-of-the-arcade-game-space-invaders/
 
@@ -6,7 +5,7 @@ https://hotto.de/software-hardware/emulation-of-the-arcade-game-space-invaders/
 
 The Invaders Emulator runs the arcade machine ROMs on simulated arcade hardware.
 
-<img src="https://hotto.de/wp-content/uploads/2024/01/color_rotated.jpg" width="300" />
+<img src="https://hotto.de/wp-content/uploads/2024/01/color_rotated.jpg" width="300" /> <img src="https://hotto.de/wp-content/uploads/2024/01/si_background.jpg" width="300" />
 
 ## Motivation and why just another SI emulator?
 SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.
@@ -38,7 +37,8 @@ computerarcheology.com [3] provides a great documentation of the SI hardware and
 
   
 **Interrupt Handling:**  
-The game software is only allowed to write into the graphics memory when the CRTs electron beam is not drawing the object to be updated. Two interrupts (vector RST 8 in the middle of the screen and RST 10 at the end) tell the code when to update the already refreshed part of the screen.  
+The game software is only allowed to write into the graphics memory when the CRTs electron beam is not drawing the object to be updated.  
+Two interrupts (vector RST 8 in the middle of the screen and RST 10 at the end) tell the code when to update the already refreshed part of the screen.  
 
 **The memory mapping:**  
 ```
@@ -65,7 +65,9 @@ E000 - FFFF - RAM shadow
 The 8080 CPU uses input and output ports to communicate with the outside world.  
 DIP switches are used to configure the game, whereas several port inputs handle the buttons to control the gameplay.  
 The output ports are mainly used to control the sound generation. A notable exception is the communication towards the external shift register to realize the invader movements.  
-  
+
+<img src="https://hotto.de/wp-content/uploads/2024/01/dip_switches.jpg" width="300" />
+
 The SW1 ... SW8 inputs are inverted before going into the CPU ports.  
 If for example SW3 is set to ON then the signal at bit 0 of port 0 is set to 0.  
   
@@ -161,20 +163,20 @@ Watchdog signal
 **Keyboard controls:**
 | Key      | Function
 |----------|---------------|
-| c        | Coin  
-| 1        | 1 player game  
-| 2        | 2 player game  
-| <-       | Move laser base to the left  
-| ->       | Move laser base to the right  
-| Space    | Fire  
-| t        | Simulate the tilting of the arcade machine  
+| c        | Coin          |
+| 1        | 1 player game | 
+| 2        | 2 player game |
+| <-       | Move laser base to the left | 
+| ->       | Move laser base to the right | 
+| Space    | Fire          |
+| t        | Simulate the tilting of the arcade machine | 
 
   
 **PlayStation/Xbox style gamepad button mapping:**
 
-<img src="https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg" width="400" />
+<img src="https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg" width="400" /> <img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_1.jpg" width="357" />
 
-<img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_1.jpg" width="400" />
+<img src="https://hotto.de/wp-content/uploads/2024/01/self_check.jpg" width="400" /> <img src="https://hotto.de/wp-content/uploads/2024/01/tilt.jpg" width="231" />
 
 
 ## The Software Implementation:
