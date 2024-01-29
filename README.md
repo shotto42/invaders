@@ -5,14 +5,17 @@ https://hotto.de/software-hardware/emulation-of-the-arcade-game-space-invaders/
 
 **The Invaders Emulator runs the arcade machine ROMs on simulated arcade hardware.**
 
-<img src="https://hotto.de/wp-content/uploads/2024/01/color_rotated.jpg" width="300" /> <img src="https://hotto.de/wp-content/uploads/2024/01/si_background.jpg" width="300" />
+<img src="https://hotto.de/wp-content/uploads/2024/01/color_rotated.jpg" width="250" /> <img src="https://hotto.de/wp-content/uploads/2024/01/si_background.jpg" width="250" />
 
 ## Motivation and why just another SI emulator?
 SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.  
 Despite of the already existing SI emulations (e.g. MAME [5]) it is still worth to build an **open source application [1]** that is easy to configure to build DIY arcade cabinets or just for playing the game which wrote history that must be preserved.  
 Furthermore, where is the fun when we don't dig deeper into the inner workings of the SI arcade machine.  
 
+  
+<img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_2_player.jpg" width="200" /> <img src="https://hotto.de/wp-content/uploads/2024/01/arcade_cabinet.jpg" width="200" />  
 
+  
 ## Space Invaders, a deeper look:
 Referencing the Wikipedia article [2] SI is commonly considered as one of the most influential video game of all time.
 By the end of 1979, an estimated 750,000 Space Invaders machines were installed worldwide. In the same year, it had become the arcade game industry's all-time best-seller. It remained the top arcade game for three years through 1980. In 1982, SI had grossed $3.8 billion ($13 billion adjusted for inflation as of 2016).
