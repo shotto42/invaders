@@ -9,7 +9,7 @@ https://hotto.de/software-hardware/emulation-of-the-arcade-game-space-invaders/
 
 ## Motivation and why just another SI emulator?
 SI has been released more than 45 years ago. This is a great reason to pay tribute by implementing an emulator that handles the arcade cabinets hardware (CPU, controls, etc.) down to all game relevant details.  
-Despite of the already existing SI emulations (e.g. MAME [5]) it is still worth to build an open source application that is easy to configure to build DIY arcade cabinets or just for playing the game which wrote history that must be preserved.  
+Despite of the already existing SI emulations (e.g. MAME [5]) it is still worth to build an **open source application [1]** that is easy to configure to build DIY arcade cabinets or just for playing the game which wrote history that must be preserved.  
 Furthermore, where is the fun when we don't dig deeper into the inner workings of the SI arcade machine.  
 
 
@@ -307,6 +307,8 @@ Furthermore, add SI sound samples (pls. see above) to the samples folder to acti
   
 **Windows:**  
 Either download the pre-compiled Invaders Emulator or use MSYS2/MINGW64 [12] to compile from source [1].  
+To compile against the three SDL2 DLL libraries copy them into the lib folder.  
+Furthermore, to make it easy just copy the DLLs into the bin folder for application execution.
   
   
 **Linux:**  
