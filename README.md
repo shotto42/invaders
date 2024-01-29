@@ -217,7 +217,7 @@ Configure the mapping between the SI sound effects and the sample filenames in t
   
 ## Emulator performance und supported hardware:
 The emulator must be able to execute "CPU clock / video frames per second" (1.9968 MHz / 59.541985Hz) opcode cycles within "1 / video frames per second" to make sure that the video RAM is fully refreshed in realtime.  
-In numbers: 33,536 cycles in **16.8ms**  
+In numbers: ~33,536 cycles in **16.8ms**  
 
 The Invaders Emulator is a single core application and has been tested on the following CPUs:
 ```
