@@ -329,6 +329,7 @@ The libraries are installed under /usr/local/lib/
 **Compile the Invaders Emulator:**  
 Clone the project from GitHub [1] and type make to compile the application.  
 Go into the bin/ folder and type ./invaders to start the application.  
+  
 Make sure that the library path /usr/local/lib is part of the LD_LIBRARY_PATH system variable.  
 If the application exits with a "symbol not found" error than add the lib path temporarily by executing the following command:
 ```
