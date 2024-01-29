@@ -1,8 +1,5 @@
 # Ignore content that is not essential to build the project
 .vscode/
-bin/rom/
-bin/samples/
 *.exe
 *.dll
-lib/
-obj/
+*.o
