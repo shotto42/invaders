@@ -174,7 +174,9 @@ Watchdog signal
   
 **PlayStation/Xbox style gamepad button mapping:**
 
-<img src="https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg" width="400" /> <img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_1.jpg" width="357" />
+<img src="https://hotto.de/wp-content/uploads/2024/01/game_controller.jpg" width="400" />  
+
+<img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_1.jpg" width="300" /> <img src="https://hotto.de/wp-content/uploads/2024/01/cocktail_table_player_2.jpg" width="300" />
 
 <img src="https://hotto.de/wp-content/uploads/2024/01/self_check.jpg" width="400" /> <img src="https://hotto.de/wp-content/uploads/2024/01/tilt.jpg" width="231" />
 
