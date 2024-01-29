@@ -190,8 +190,8 @@ For copyright reasons it is not allowed to distribute the ROM files!
 The Invaders Emulation works with MAME ROMs (Google ...).  
 Unzip the ROM files and copy the content into the rom folder.  
   
-The folder ini_file_templates contains configuration templates for each of the below listed ROM sets.  
-Copy the ROM matching ini file (e.g. invaders.sitv1) into the invaders main folder and rename it to invaders.ini to make sure that the ROMs are correctly loaded and memory mapped. Details of the memory mapping are well documented in the MAME source code: midw8080/8080bw.cpp [7]
+The folder **ini_file_templates** contains configuration templates for each of the below listed ROM sets.  
+Copy the ROM matching ini file (e.g. invaders.sitv1) into the invaders bin/ folder and rename it to invaders.ini to make sure that the ROMs are correctly loaded and memory mapped. Details of the memory mapping are well documented in the MAME source code: midw8080/8080bw.cpp [7]
 
 **The following MAME ROM versions have been tested:**
 | MAME      | Description                                                     |
@@ -225,7 +225,7 @@ ARM Cortex-A76       (Orange PI 5B)                 < 2ms
 ## Configuration file (invaders.ini):
 The ini file allows the full configuration of the application. For example the DIP switch settings of the arcade cabinet or the video graphics output mode.
 The configuration lines start with a keyword and each line item is separated by a space or tab.
-Please refer to the ini_file_templates folder provided by the download and GitHub [1].
+Please refer to the **ini_file_templates** folder provided by the download and GitHub [1].
 
 ```
 ROM_ADDRESSES:  0x0000 0x0800 0x1000 0x1800
