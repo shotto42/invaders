@@ -316,7 +316,7 @@ Furthermore, to make it easy just copy the DLLs into the bin folder for applicat
   
   
 **Linux:**  
-As pre-requisite compile and install the SDL2 [9], SDL2_mixer [10] and SDL2_image [11] libraries.
+As pre-requisite compile and install the SDL2 [9], SDL2_mixer [10] and SDL2_image [11] libraries.  
 For each of the three libraries enter the associated folder and execute the following:  
 ```
 $ ./configure
