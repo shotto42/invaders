@@ -1,7 +1,7 @@
 # Project Webpage:
 https://hotto.de/software-hardware/emulation-of-the-arcade-game-space-invaders/
 
-# Emulation of the Arcade Game Space Invaders
+# Emulation of the Space Invaders Arcade Hardware
 
 **The Invaders Emulator runs the arcade machine ROMs on simulated arcade hardware.**
 
