@@ -1,10 +1,10 @@
 TARGET = invaders
 
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
 LINKER = gcc
-LFLAGS = -Wall -Wextra
+LFLAGS = -Wall -Wextra -Werror
 LFLAGS += -L /usr/local/lib/ -L lib/ -l SDL2 -l SDL2_mixer -l SDL2_image
 
 SRCDIR   = src
