@@ -192,7 +192,7 @@ The arcade system simulation has been freshly implemented to cover the above men
 
 **Game ROMs:**  
 For copyright reasons it is not allowed to distribute the ROM files.  
-The Invaders Emulation works with MAME ROMs (Google ...).  
+The Invaders Emulation works with MAME ROMs.  
 Unzip the ROM files and copy the content into the bin/rom folder.  
   
 The folder **ini_file_templates** contains configuration templates for each of the below listed ROM sets.  
@@ -212,7 +212,7 @@ Copy the ROM matching ini file (e.g. invaders.sitv1) into the invaders bin/ fold
   
 **Emulator Audio Output:**  
 For copyright reasons it is not possible to provide the sound samples.  
-Find (Google ...) and add the wav files to the bin/samples folder to activate the audio output.  
+Find and add the wav files to the bin/samples folder to activate the audio output.  
 Configure the mapping between the SI sound effects and the sample filenames in the invaders.ini file.  
   
   
