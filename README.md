@@ -191,7 +191,7 @@ The arcade system simulation has been freshly implemented to cover the above men
 
 
 **Game ROMs:**  
-For copyright reasons it is not allowed to distribute the ROM files.  
+For copyright reasons it is not possible to distribute the ROM files.  
 The Invaders Emulation works with MAME ROMs.  
 Unzip the ROM files and copy the content into the bin/rom folder.  
   
