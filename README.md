@@ -338,7 +338,7 @@ $ export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
 ```
 
 **macOS:**  
-Up to now it hasn't been tested whether the compilation works on Apple machines but there shouldn't be any reason that prevents it.  
+After installing the development tools the compilation of SDL2 [9], SDL2_mixer [10], SDL2_image [11] as well as invaders [1] works similiar to Linux.
 
   
 ## References:  
